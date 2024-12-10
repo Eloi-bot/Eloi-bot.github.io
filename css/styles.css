@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    color: #e0e5ec;
+    background-color: transparent;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Ensure the video is behind the content */
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: url('default.jpg') no-repeat center center/cover;
+    z-index: -1;
+}
+
+#weather-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay for readability */
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.header {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark translucent for contrast */
+    color: #d1e0e0; /* Light cyan for readability */
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1; /* Ensure the content is above the video */
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark translucent for contrast */
+    padding: 0.5rem;
+    position: relative;
+    z-index: 1; /* Ensure the content is above the video */
+}
+
+.nav a {
+    color: #c2d1d1; /* Light cyan for better visibility */
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.section {
+    padding: 1rem;
+    position: relative;
+    z-index: 1; /* Ensure the content is above the video */
+}
+
+.brand {
+    color: #8f9fa6; /* Muted gray-blue */
+}
+
+.main {
+    margin-top: 1rem;
+}
+
+.time, .date {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.weather {
+    display: flex;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 1rem;
+}
+
+.condition, .temperature {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+}
+
+.footer {
+    background-color: rgba(0, 0, 0, 0.7); /* Dark translucent for contrast */
+    color: #d1e0e0; /* Light cyan for readability */
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1; /* Ensure the content is above the video */
+}
+
+.weather-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    padding: 20px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.weather-info h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.weather-info p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.weather-info img {
+    width: 100px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+.content {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.code-section {
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+    height: auto;
+    opacity: 1;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.hidden {
+    height: 0;
+    opacity: 0;
+}
+
+#rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image: url('rain.mp4'); /* This should be a URL for an animated rain image or video */
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#rain.active {
+    opacity: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    .nav a {
+        margin-bottom: 10px;
+    }
+    .search {
+        flex-direction: column;
+    }
+    .search input, .search button {
+        margin-bottom: 10px;
+    }
+    .weather-info {
+        text-align: center;
+    }
+    .datetime {
+        flex-direction: column;
+    }
+    .datetime .time, .datetime .date {
+        margin: 0;
+    }
+}

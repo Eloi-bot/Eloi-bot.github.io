@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="light-mode">
+    <div class="background" id="background"></div>
+    <div class="container">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="mailto:elo6551@gmail.com">Contact Us</a></li>
+                </ul>
+            </nav>
+            <h1 id="app-title">Weather App</h1>
+            <div class="controls">
+                <button id="dark-mode-btn">Dark Mode</button>
+                <select id="temp-select">
+                    <option value="celsius">Celsius</option>
+                    <option value="fahrenheit">Fahrenheit</option>
+                </select>
+                <select id="language-select">
+                    <option value="en">English</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <!-- Add more languages as needed -->
+                </select>
+            </div>
+        </header>
+        <div class="search">
+            <input type="text" id="city-input" placeholder="Enter city name">
+            <button id="search-btn">Search</button>
+        </div>
+        <div id="weather-display" class="weather-display">
+            <div class="weather-info">
+                <h2 id="city-name"></h2>
+                <div class="weather-icon" id="weather-icon"></div>
+                <p class="temperature" id="temperature"></p>
+                <p class="condition" id="condition"></p>
+                <p class="humidity" id="humidity"></p>
+                <p class="wind-speed" id="wind-speed"></p>
+                <p class="local-time" id="local-time"></p>
+            </div>
+        </div>
+        <div id="forecast-details" class="forecast">
+            <h3 id="forecast-title">5-Day Forecast</h3>
+            <div class="forecast-item">
+                <!-- Add forecast items here -->
+            </div>
+        </div>
+        <div id="hourly-details" class="hourly-forecast">
+            <h3 id="hourly-title">Hourly Forecast</h3>
+            <div class="hourly-item">
+                <!-- Add hourly items here -->
+            </div>
+        </div>
+        <footer>
+            <div class="footer-icons">
+                <a href="http://www.icuzambia.net">ICU Zambia</a>
+                <a href="https://www.zrdc.org">ZRDC</a>
+                <a href="mailto:elo6551@gmail.com">Contact Us</a>
+                <a href="https://easyweather.com">Easy Weather</a>
+            </div>
+            <div class="copyright">
+                &copy; 2024 ELOIY CHITI 2310279597
+            </div>
+        </footer>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>

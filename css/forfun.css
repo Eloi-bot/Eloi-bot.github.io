@@ -1,0 +1,89 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-image: url(weather.webp);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  background-size: cover; /* Ensuring the background image covers the entire background */
+  transition:  0.5s ease; /* Smooth transition for background changes */
+}
+
+.container {
+  text-align: center;
+  background: rgb(214, 242, 245); /* Semi-transparent background for container */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 600px;
+  animation: fadeIn 1s ease; /* Fade-in animation */
+}
+
+.search {
+  margin-bottom: 20px;
+  animation: slideIn 1s ease; /* Slide-in animation */
+}
+
+#city-input, #geolocation-btn, #language-select, #country-select {
+  padding: 10px;
+  margin: 5px 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s;
+}
+
+#city-input:focus, #geolocation-btn:hover, #language-select:focus, #country-select:focus {
+  border-color: #007bff; /* Border color change on focus/hover */
+}
+
+#search-btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 5px 0;
+  transition: background-color 0.3s;
+}
+
+#search-btn:hover {
+  background-color: #0056b3; /* Background color change on hover */
+}
+
+.weather-info, .forecast, .preferences {
+  margin-top: 20px;
+  animation: slideIn 1s ease; /* Slide-in animation */
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+      width: 100%;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+
+body.sunny {
+  background-image: url('sunny.jpg');}
+
+body.rain {background-image: url('rainy.jpg');
+}
+  body.clouds {background-image: url('weather.webp');
+}
+body.default {
+      background-image: url('default.jpg');}
